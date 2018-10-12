@@ -42,10 +42,16 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         dice4 = new javax.swing.JLabel();
         dice5Hold = new javax.swing.JButton();
         dice5 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        onesButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 0));
 
         jLabel1.setFont(new java.awt.Font("Ravie", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
@@ -103,16 +109,29 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
 
         dice5.setText("0");
 
-        jButton7.setText("Ones");
+        onesButton.setText("Ones");
+        onesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onesButtonActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Twos");
+
+        jButton3.setText("Threes");
+
+        jButton4.setText("Fours");
+
+        jButton5.setText("Fives");
+
+        jButton6.setText("Sixes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(dice1)
                 .addGap(53, 53, 53)
                 .addComponent(dice2)
@@ -143,10 +162,18 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dice5Hold))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton7)
+                        .addGap(4, 4, 4)
+                        .addComponent(onesButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,8 +196,12 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
                     .addComponent(dice5Hold))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton2))
+                    .addComponent(onesButton)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(27, 27, 27))
@@ -233,6 +264,10 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         diceHold5=true;
     }//GEN-LAST:event_dice5HoldActionPerformed
 
+    private void onesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onesButtonActionPerformed
+            
+    }//GEN-LAST:event_onesButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -281,8 +316,12 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
     private javax.swing.JButton dice5Hold;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton onesButton;
     // End of variables declaration//GEN-END:variables
 }
