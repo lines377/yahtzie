@@ -18,6 +18,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         initComponents();
     }
     int diceNum = (int) Math.round(Math.random() * 5 + 1), diceNum2 = (int) Math.round(Math.random() * 5 + 1), diceNum3 = (int) Math.round(Math.random() * 5 + 1), diceNum4 = (int) Math.round(Math.random() * 5 + 1), diceNum5 = (int) Math.round(Math.random() * 5 + 1);
+    boolean diceHold = false, diceHold2 = false, diceHold3 = false, diceHold4 = false, diceHold5 = false;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,6 +79,11 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         dice3.setText("0");
 
         dice3Hold.setText("Hold");
+        dice3Hold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dice3HoldActionPerformed(evt);
+            }
+        });
 
         dice4Hold.setText("Hold");
         dice4Hold.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +95,11 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         dice4.setText("0");
 
         dice5Hold.setText("Hold");
+        dice5Hold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dice5HoldActionPerformed(evt);
+            }
+        });
 
         dice5.setText("0");
 
@@ -180,24 +191,47 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dice2HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice2HoldActionPerformed
-        // TODO add your handling code here:
+        diceHold2 = true;
     }//GEN-LAST:event_dice2HoldActionPerformed
 
     private void dice4HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice4HoldActionPerformed
-        // TODO add your handling code here:
+        diceHold4=true;
     }//GEN-LAST:event_dice4HoldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dice1.setText(Integer.toString(diceNum));
-        dice2.setText(Integer.toString(diceNum2));
-        dice3.setText(Integer.toString(diceNum3));
-        dice4.setText(Integer.toString(diceNum4));
-        dice5.setText(Integer.toString(diceNum5));
+        if (diceHold == false) {
+            dice1.setText(Integer.toString(diceNum));
+            diceNum = (int) Math.round(Math.random() * 5 + 1);
+        }
+        if (diceHold2 == false) {
+            dice2.setText(Integer.toString(diceNum2));
+            diceNum2 = (int) Math.round(Math.random() * 5 + 1);
+        }
+        if (diceHold3 == false) {
+            dice3.setText(Integer.toString(diceNum3));
+            diceNum3 = (int) Math.round(Math.random() * 5 + 1);
+        }
+        if (diceHold4 == false) {
+            dice4.setText(Integer.toString(diceNum4));
+            diceNum4 = (int) Math.round(Math.random() * 5 + 1);
+        }
+        if (diceHold5 == false) {
+            dice5.setText(Integer.toString(diceNum5));
+            diceNum5 = (int) Math.round(Math.random() * 5 + 1);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void dice1HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice1HoldActionPerformed
-        
+        diceHold = true;
     }//GEN-LAST:event_dice1HoldActionPerformed
+
+    private void dice3HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice3HoldActionPerformed
+        diceHold3=true;
+    }//GEN-LAST:event_dice3HoldActionPerformed
+
+    private void dice5HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice5HoldActionPerformed
+        diceHold5=true;
+    }//GEN-LAST:event_dice5HoldActionPerformed
 
     /**
      * @param args the command line arguments

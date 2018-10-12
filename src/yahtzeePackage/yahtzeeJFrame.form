@@ -171,6 +171,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Hold"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dice3HoldActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="dice4Hold">
           <Properties>
@@ -189,6 +192,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Hold"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dice5HoldActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="dice5">
           <Properties>
