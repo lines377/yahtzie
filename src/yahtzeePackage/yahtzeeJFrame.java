@@ -16,9 +16,19 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
      */
     public yahtzeeJFrame() {
         initComponents();
+        yahtzeeButton.setEnabled(false);
+        onesButton.setEnabled(false);
+        twosButton.setEnabled(false);
+        threesButton.setEnabled(false);
+        foursButton.setEnabled(false);
+        fivesButton.setEnabled(false);
+        sixesButton.setEnabled(false);
+        threeOfAKind.setEnabled(false);
+        fourOfAKind.setEnabled(false);
+        fullHouse.setEnabled(false);
     }
-    int diceNum = (int) Math.round(Math.random() * 5 + 1), diceNum2 = (int) Math.round(Math.random() * 5 + 1), diceNum3 = (int) Math.round(Math.random() * 5 + 1), diceNum4 = (int) Math.round(Math.random() * 5 + 1), diceNum5 = (int) Math.round(Math.random() * 5 + 1);
-    boolean diceHold = false, diceHold2 = false, diceHold3 = false, diceHold4 = false, diceHold5 = false;
+    int diceNum, diceNum2, diceNum3, diceNum4, diceNum5;
+    boolean diceHold = false, diceHold2 = false, diceHold3 = false, diceHold4 = false, diceHold5 = false, yahtzeeButtonPress = false;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,7 +42,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         dice1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        RollButton = new javax.swing.JButton();
         dice1Hold = new javax.swing.JButton();
         dice2 = new javax.swing.JLabel();
         dice2Hold = new javax.swing.JButton();
@@ -43,26 +53,42 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         dice5Hold = new javax.swing.JButton();
         dice5 = new javax.swing.JLabel();
         onesButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        twosButton = new javax.swing.JButton();
+        threesButton = new javax.swing.JButton();
+        foursButton = new javax.swing.JButton();
+        fivesButton = new javax.swing.JButton();
+        sixesButton = new javax.swing.JButton();
+        threeOfAKind = new javax.swing.JButton();
+        sum = new javax.swing.JLabel();
+        fourOfAKind = new javax.swing.JButton();
+        fullHouse = new javax.swing.JButton();
+        yahtzeeButton = new javax.swing.JButton();
+        onesLable = new javax.swing.JLabel();
+        FHLabel = new javax.swing.JLabel();
+        yahtzeeLable = new javax.swing.JLabel();
+        FOAKLabel = new javax.swing.JLabel();
+        TOAKLable = new javax.swing.JLabel();
+        sixesLable = new javax.swing.JLabel();
+        fivesLable = new javax.swing.JLabel();
+        foursLable = new javax.swing.JLabel();
+        threesLable = new javax.swing.JLabel();
+        twossButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 0));
 
-        jLabel1.setFont(new java.awt.Font("Ravie", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Yahtzee");
 
-        dice1.setText("0");
+        dice1.setText("       0");
 
-        jButton1.setText("Roll!");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        RollButton.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+        RollButton.setText("Roll!");
+        RollButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RollButtonActionPerformed(evt);
             }
         });
 
@@ -73,7 +99,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
             }
         });
 
-        dice2.setText("0");
+        dice2.setText("       0");
 
         dice2Hold.setText("Hold");
         dice2Hold.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +108,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
             }
         });
 
-        dice3.setText("0");
+        dice3.setText("       0");
 
         dice3Hold.setText("Hold");
         dice3Hold.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +124,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
             }
         });
 
-        dice4.setText("0");
+        dice4.setText("       0");
 
         dice5Hold.setText("Hold");
         dice5Hold.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +133,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
             }
         });
 
-        dice5.setText("0");
+        dice5.setText("       0");
 
         onesButton.setText("Ones");
         onesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,106 +142,232 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Twos");
+        twosButton.setText("Twos");
 
-        jButton3.setText("Threes");
+        threesButton.setText("Threes");
 
-        jButton4.setText("Fours");
+        foursButton.setText("Fours");
 
-        jButton5.setText("Fives");
+        fivesButton.setText("Fives");
 
-        jButton6.setText("Sixes");
+        sixesButton.setText("Sixes");
+
+        threeOfAKind.setText("3 of a kind");
+        threeOfAKind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                threeOfAKindActionPerformed(evt);
+            }
+        });
+
+        sum.setText("       Sum");
+        sum.setOpaque(true);
+
+        fourOfAKind.setText("4 of a kind");
+
+        fullHouse.setText("Full House");
+
+        yahtzeeButton.setText("Yahtzee");
+        yahtzeeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yahtzeeButtonActionPerformed(evt);
+            }
+        });
+
+        onesLable.setBackground(new java.awt.Color(255, 102, 102));
+        onesLable.setOpaque(true);
+
+        FHLabel.setBackground(new java.awt.Color(255, 102, 102));
+        FHLabel.setOpaque(true);
+
+        yahtzeeLable.setBackground(new java.awt.Color(255, 102, 102));
+        yahtzeeLable.setOpaque(true);
+
+        FOAKLabel.setBackground(new java.awt.Color(255, 102, 102));
+        FOAKLabel.setOpaque(true);
+
+        TOAKLable.setBackground(new java.awt.Color(255, 102, 102));
+        TOAKLable.setOpaque(true);
+
+        sixesLable.setBackground(new java.awt.Color(255, 102, 102));
+        sixesLable.setOpaque(true);
+
+        fivesLable.setBackground(new java.awt.Color(255, 102, 102));
+        fivesLable.setOpaque(true);
+
+        foursLable.setBackground(new java.awt.Color(255, 102, 102));
+        foursLable.setOpaque(true);
+
+        threesLable.setBackground(new java.awt.Color(255, 102, 102));
+        threesLable.setOpaque(true);
+
+        twossButton.setBackground(new java.awt.Color(255, 102, 102));
+        twossButton.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(dice1)
-                .addGap(53, 53, 53)
-                .addComponent(dice2)
-                .addGap(54, 54, 54)
-                .addComponent(dice3)
-                .addGap(50, 50, 50)
-                .addComponent(dice4)
-                .addGap(58, 58, 58)
-                .addComponent(dice5)
-                .addGap(98, 98, 98))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jLabel1))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(twossButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(dice1Hold)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dice2Hold)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dice3Hold)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dice4Hold)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dice5Hold))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(onesButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(136, 136, 136)
+                                .addComponent(jLabel1))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(dice1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(dice1Hold, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(dice2Hold))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(dice2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(6, 6, 6)
+                                        .addComponent(dice3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(161, 161, 161)
+                                        .addComponent(dice3Hold)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(dice4Hold))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(dice4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(dice5Hold, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(dice5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(RollButton, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(onesLable, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(threesLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                        .addComponent(foursLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(fivesLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(sixesLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(TOAKLable, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(13, 13, 13)))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(sum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sixesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fivesButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(onesButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(twosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(threesButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(foursButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(63, 63, 63))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(FOAKLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FHLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(yahtzeeLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(yahtzeeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fourOfAKind, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(threeOfAKind, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fullHouse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dice1)
-                    .addComponent(dice2)
-                    .addComponent(dice3)
-                    .addComponent(dice4)
-                    .addComponent(dice5))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(onesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(onesLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(twosButton)
+                            .addComponent(twossButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(49, 49, 49)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(threesLable, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dice1)
+                        .addComponent(dice2)
+                        .addComponent(dice3)
+                        .addComponent(dice4)
+                        .addComponent(dice5)
+                        .addComponent(threesButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dice1Hold)
-                    .addComponent(dice2Hold)
-                    .addComponent(dice3Hold)
-                    .addComponent(dice4Hold)
-                    .addComponent(dice5Hold))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(onesButton)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(27, 27, 27))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dice1Hold)
+                        .addComponent(dice2Hold)
+                        .addComponent(dice3Hold)
+                        .addComponent(dice4Hold)
+                        .addComponent(dice5Hold)
+                        .addComponent(foursButton))
+                    .addComponent(foursLable, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fivesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fivesLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sixesButton)
+                            .addComponent(sixesLable, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sum, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(threeOfAKind)
+                            .addComponent(TOAKLable, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fourOfAKind)
+                            .addComponent(FOAKLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fullHouse)
+                            .addComponent(FHLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(yahtzeeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(yahtzeeLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(RollButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -226,47 +378,140 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_dice2HoldActionPerformed
 
     private void dice4HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice4HoldActionPerformed
-        diceHold4=true;
+        diceHold4 = true;
     }//GEN-LAST:event_dice4HoldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RollButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RollButtonActionPerformed
+        String holdDice = null, holdDice2 = null, holdDice3 = null, holdDice4 = null, holdDice5 = null;
+        int[] countOnes = new int[5];
+        int[] counttwos = new int[5];
+        int[] countThrees = new int[5];
+        int[] countFours = new int[5];
+        int[] countSixes = new int[5];
+
         if (diceHold == false) {
-            dice1.setText(Integer.toString(diceNum));
             diceNum = (int) Math.round(Math.random() * 5 + 1);
+            holdDice = Integer.toString(diceNum);
+            dice1.setText(holdDice);
         }
+
         if (diceHold2 == false) {
-            dice2.setText(Integer.toString(diceNum2));
             diceNum2 = (int) Math.round(Math.random() * 5 + 1);
+            holdDice2 = Integer.toString(diceNum2);
+            dice2.setText(holdDice2);
+
         }
+
         if (diceHold3 == false) {
-            dice3.setText(Integer.toString(diceNum3));
             diceNum3 = (int) Math.round(Math.random() * 5 + 1);
+            holdDice3 = Integer.toString(diceNum3);
+            dice3.setText(holdDice3);
         }
         if (diceHold4 == false) {
-            dice4.setText(Integer.toString(diceNum4));
             diceNum4 = (int) Math.round(Math.random() * 5 + 1);
+            holdDice4 = Integer.toString(diceNum4);
+            dice4.setText(holdDice4);
+
         }
         if (diceHold5 == false) {
-            dice5.setText(Integer.toString(diceNum5));
             diceNum5 = (int) Math.round(Math.random() * 5 + 1);
+            holdDice5 = Integer.toString(diceNum2);
+            dice5.setText(holdDice5);
+
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+        //ones
+        if (diceNum == 1 || diceNum2 == 1 || diceNum3 == 1 || diceNum4 == 1 || diceNum5 == 1) {
+            onesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
+            onesButton.setEnabled(true);
+            countOnes[0] = 1;
+
+        } else {
+            onesButton.setEnabled(false);
+            onesLable.setText(" ");
+        }
+        //twos
+        if (diceNum == 2 || diceNum2 == 2 || diceNum3 == 2 || diceNum4 == 2 || diceNum5 == 2) {
+           System.out.println("yayayay");
+            twossButton.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
+            twosButton.setEnabled(true);
+        } else {
+            
+            twosButton.setEnabled(false);
+            twossButton.setText(" ");
+        }
+        //threes
+        if (diceNum == 3 || diceNum2 == 3 || diceNum3 == 3 || diceNum4 == 3 || diceNum5 == 3) {
+            threesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
+            threesButton.setEnabled(true);
+        } else {
+            threesButton.setEnabled(false);
+            threesLable.setText(" ");
+        }
+        //fours
+        if (diceNum == 4 || diceNum2 == 4 || diceNum3 == 4 || diceNum4 == 4 || diceNum5 == 4) {
+            foursLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
+            foursButton.setEnabled(true);
+        } else {
+            foursButton.setEnabled(false);
+            foursLable.setText(" ");
+        }
+        //fives
+        if (diceNum == 5 || diceNum2 == 5 || diceNum3 == 5 || diceNum4 == 5 || diceNum5 == 5) {
+            fivesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
+            fivesButton.setEnabled(true);
+        } else {
+            fivesButton.setEnabled(false);
+            fivesLable.setText(" ");
+        }
+        //sixes
+        if (diceNum == 6 || diceNum2 == 6 || diceNum3 == 6 || diceNum4 == 6 || diceNum5 == 6) {
+            sixesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
+            sixesButton.setEnabled(true);
+        } else {
+           System.out.println("yayayay");
+            sixesButton.setEnabled(false);
+            sixesLable.setText(" ");
+        }
+        //yahtzee
+//       if (yahtzeeButtonPress = false) {
+//            System.out.println("g");
+            if (diceNum == diceNum2 && diceNum2 == diceNum3 && diceNum3 == diceNum4 && diceNum4 == diceNum5) {
+                yahtzeeLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
+                yahtzeeButton.setEnabled(true);
+                System.out.println("working");
+            } else {
+                yahtzeeButton.setEnabled(false);
+                yahtzeeLable.setText(" ");
+                System.out.println("gg");
+            }
+//        }
+
+    }//GEN-LAST:event_RollButtonActionPerformed
 
     private void dice1HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice1HoldActionPerformed
         diceHold = true;
     }//GEN-LAST:event_dice1HoldActionPerformed
 
     private void dice3HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice3HoldActionPerformed
-        diceHold3=true;
+        diceHold3 = true;
     }//GEN-LAST:event_dice3HoldActionPerformed
 
     private void dice5HoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dice5HoldActionPerformed
-        diceHold5=true;
+        diceHold5 = true;
     }//GEN-LAST:event_dice5HoldActionPerformed
 
     private void onesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onesButtonActionPerformed
-            
+        int[] countOnes = new int[5];
+
     }//GEN-LAST:event_onesButtonActionPerformed
+
+    private void threeOfAKindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeOfAKindActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_threeOfAKindActionPerformed
+
+    private void yahtzeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yahtzeeButtonActionPerformed
+        //yahtzeeButtonPress = true;
+    }//GEN-LAST:event_yahtzeeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,6 +549,10 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FHLabel;
+    private javax.swing.JLabel FOAKLabel;
+    private javax.swing.JButton RollButton;
+    private javax.swing.JLabel TOAKLable;
     private javax.swing.JLabel dice1;
     private javax.swing.JButton dice1Hold;
     private javax.swing.JLabel dice2;
@@ -314,14 +563,25 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
     private javax.swing.JButton dice4Hold;
     private javax.swing.JLabel dice5;
     private javax.swing.JButton dice5Hold;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton fivesButton;
+    private javax.swing.JLabel fivesLable;
+    private javax.swing.JButton fourOfAKind;
+    private javax.swing.JButton foursButton;
+    private javax.swing.JLabel foursLable;
+    private javax.swing.JButton fullHouse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton onesButton;
+    private javax.swing.JLabel onesLable;
+    private javax.swing.JButton sixesButton;
+    private javax.swing.JLabel sixesLable;
+    private javax.swing.JLabel sum;
+    private javax.swing.JButton threeOfAKind;
+    private javax.swing.JButton threesButton;
+    private javax.swing.JLabel threesLable;
+    private javax.swing.JButton twosButton;
+    private javax.swing.JLabel twossButton;
+    private javax.swing.JButton yahtzeeButton;
+    private javax.swing.JLabel yahtzeeLable;
     // End of variables declaration//GEN-END:variables
 }
