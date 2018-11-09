@@ -23,15 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" pref="576" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="1" min="-2" pref="388" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -54,61 +51,74 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="dice1" max="32767" attributes="0"/>
-                                              <Component id="dice1Hold" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="dice2Hold" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="dice1" max="32767" attributes="0"/>
+                                                      <Component id="dice1Hold" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="dice2Hold" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                          <Component id="dice2" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="dice3" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="dice3Hold" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="dice2" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="dontone" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="donttwo" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="dontthree" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                          <Component id="dice3" min="-2" pref="53" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                                          <Component id="dice3Hold" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="dice4Hold" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                          <Component id="dice4" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                                  <Component id="dice4" min="-2" pref="53" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="dontfour" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="dice4Hold" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="dice5Hold" max="32767" attributes="0"/>
                                       <Component id="dice5" max="32767" attributes="0"/>
+                                      <Component id="dontfive" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dice5Hold" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="RollButton" min="-2" pref="369" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="RollButton" alignment="1" min="-2" pref="369" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Component id="onesLable" pref="60" max="32767" attributes="0"/>
+                                  <Component id="onesLable" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
@@ -117,52 +127,51 @@
                                           <Component id="threesLable" alignment="1" pref="60" max="32767" attributes="0"/>
                                           <Component id="foursLable" alignment="1" max="32767" attributes="0"/>
                                           <Component id="fivesLable" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="sixesLable" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="sixesLable" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="TOAKLable" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="FOAKLabel" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="FHLabel" alignment="1" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="TOAKLable" min="-2" pref="47" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="yahtzeeLable" alignment="1" min="-2" pref="47" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="sum" max="32767" attributes="0"/>
-                      <Component id="sixesButton" max="32767" attributes="0"/>
-                      <Component id="fivesButton" alignment="1" max="32767" attributes="0"/>
-                      <Component id="onesButton" alignment="1" max="32767" attributes="0"/>
-                      <Component id="twosButton" alignment="1" max="32767" attributes="0"/>
-                      <Component id="threesButton" alignment="1" max="32767" attributes="0"/>
-                      <Component id="foursButton" alignment="1" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="sum" max="32767" attributes="0"/>
+                          <Component id="sixesButton" max="32767" attributes="0"/>
+                          <Component id="fivesButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="onesButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="twosButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="threesButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="foursButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="threeOfAKind" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fourOfAKind" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fullHouse" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="yahtzeeButton" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="FOAKLabel" alignment="1" max="32767" attributes="0"/>
-                      <Component id="FHLabel" alignment="1" max="32767" attributes="0"/>
-                      <Component id="yahtzeeLable" alignment="1" pref="47" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="yahtzeeButton" max="32767" attributes="0"/>
-                      <Component id="fourOfAKind" alignment="0" max="32767" attributes="0"/>
-                      <Component id="threeOfAKind" alignment="0" max="32767" attributes="0"/>
-                      <Component id="fullHouse" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="RollButton" min="-2" pref="168" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="onesButton" max="32767" attributes="0"/>
@@ -174,10 +183,6 @@
                               <Component id="twossButton" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -201,46 +206,55 @@
                           <Component id="dice5Hold" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="foursButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="foursLable" alignment="0" pref="27" max="32767" attributes="0"/>
+                      <Component id="foursLable" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="fivesButton" max="32767" attributes="0"/>
-                      <Component id="fivesLable" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="fivesButton" max="32767" attributes="0"/>
+                          <Component id="fivesLable" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="dontfour" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dontfive" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dontthree" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="donttwo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dontone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="sixesButton" min="-2" max="-2" attributes="0"/>
-                              <Component id="sixesLable" min="-2" pref="23" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="sixesButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="sum" min="-2" pref="23" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="threeOfAKind" min="-2" max="-2" attributes="0"/>
-                              <Component id="TOAKLable" min="-2" pref="23" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="fourOfAKind" min="-2" max="-2" attributes="0"/>
-                              <Component id="FOAKLabel" min="-2" pref="23" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="fullHouse" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FHLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="yahtzeeButton" max="32767" attributes="0"/>
-                              <Component id="yahtzeeLable" max="32767" attributes="0"/>
-                          </Group>
                       </Group>
-                      <Component id="RollButton" max="32767" attributes="0"/>
+                      <Component id="sixesLable" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="threeOfAKind" min="-2" max="-2" attributes="0"/>
+                      <Component id="TOAKLable" min="-2" pref="23" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="fourOfAKind" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="fullHouse" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="FOAKLabel" min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="FHLabel" min="-2" pref="23" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="yahtzeeLable" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="yahtzeeButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -477,6 +491,37 @@
             </Property>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="dontfour">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Don&apos;t"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="dontfive">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Don&apos;t"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="dontthree">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Don&apos;t"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="donttwo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Don&apos;t"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="donttwoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="dontone">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Don&apos;t"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dontoneActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
