@@ -28,7 +28,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" min="-2" pref="388" max="-2" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="434" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -117,23 +117,21 @@
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Component id="onesLable" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="threesLable" alignment="1" pref="60" max="32767" attributes="0"/>
-                                          <Component id="foursLable" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="fivesLable" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="sixesLable" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="TOAKLable" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FOAKLabel" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FHLabel" alignment="1" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="yahtzeeLable" alignment="1" min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="threesLable" alignment="1" pref="60" max="32767" attributes="0"/>
+                                      <Component id="foursLable" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="fivesLable" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="sixesLable" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="TOAKLable" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="FOAKLabel" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="FHLabel" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="yahtzeeLable" max="32767" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                  <Component id="onesLable" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -359,21 +357,33 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Twos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="twosButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="threesButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Threes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="threesButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="foursButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fours"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="foursButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="fivesButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fives"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fivesButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="sixesButton">
           <Properties>

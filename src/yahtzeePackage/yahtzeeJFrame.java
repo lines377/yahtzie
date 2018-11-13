@@ -19,7 +19,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
 
     }
     int diceNum, diceNum2, diceNum3, diceNum4, diceNum5;
-    boolean diceHold = false, diceHold2 = false, diceHold3 = false, diceHold4 = false, diceHold5 = false, yahtzeeButtonPress = false;
+    boolean diceHold = false, diceHold2 = false, diceHold3 = false, diceHold4 = false, diceHold5 = false,oneButtonPress=false,twoButtonPress=false,threeButtonPress=false,fourButtonPress=false,fiveButtonPress=false, yahtzeeButtonPress = false;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -139,12 +139,32 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         });
 
         twosButton.setText("Twos");
+        twosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                twosButtonActionPerformed(evt);
+            }
+        });
 
         threesButton.setText("Threes");
+        threesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                threesButtonActionPerformed(evt);
+            }
+        });
 
         foursButton.setText("Fours");
+        foursButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                foursButtonActionPerformed(evt);
+            }
+        });
 
         fivesButton.setText("Fives");
+        fivesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fivesButtonActionPerformed(evt);
+            }
+        });
 
         sixesButton.setText("Sixes");
 
@@ -278,20 +298,19 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
                             .addComponent(RollButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(onesLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(threesLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                                        .addComponent(foursLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(fivesLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(sixesLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(TOAKLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(FOAKLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(FHLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(yahtzeeLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(threesLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                    .addComponent(foursLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fivesLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(sixesLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TOAKLable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FOAKLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FHLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(yahtzeeLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(onesLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -395,7 +414,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, Short.MAX_VALUE)
         );
 
         pack();
@@ -415,11 +434,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
 
     private void RollButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RollButtonActionPerformed
         String holdDice = null, holdDice2 = null, holdDice3 = null, holdDice4 = null, holdDice5 = null;
-        int[] countOnes = new int[5];
-        int[] counttwos = new int[5];
-        int[] countThrees = new int[5];
-        int[] countFours = new int[5];
-        int[] countSixes = new int[5];
+       
 
         if (diceHold == false) {
             diceNum = (int) Math.round(Math.random() * 5 + 1);
@@ -455,7 +470,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         if (diceNum == 1 || diceNum2 == 1 || diceNum3 == 1 || diceNum4 == 1 || diceNum5 == 1) {
             onesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
 
-            countOnes[0] = 1;
+            
 
         } else {
             onesLable.setText(" ");
@@ -500,7 +515,8 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
             sixesLable.setText(" ");
         }
         //yahtzee
-        if (diceNum == diceNum2 && diceNum2 == diceNum3 && diceNum3 == diceNum4 && diceNum4 == diceNum5) {
+        if(yahtzeeButtonPress==false){
+            if (diceNum == diceNum2 && diceNum2 == diceNum3 && diceNum3 == diceNum4 && diceNum4 == diceNum5) {
                 yahtzeeLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
                 yahtzeeButton.setEnabled(true);
                 System.out.println("working");
@@ -509,7 +525,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
                 yahtzeeLable.setText(" ");
 
             }
-        
+        } 
 
     }//GEN-LAST:event_RollButtonActionPerformed
 
@@ -532,8 +548,23 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_dice5HoldActionPerformed
 
     private void onesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onesButtonActionPerformed
-        int[] countOnes = new int[5];
-        yahtzeeButtonPress = true;
+        onesButton.setEnabled(false);
+        diceHold = false;
+        dontone.setEnabled(false);
+        dice1Hold.setEnabled(true);
+        diceHold2 = false;
+        donttwo.setEnabled(false);
+        dice2Hold.setEnabled(true);
+        diceHold3 = false;
+        dontthree.setEnabled(false);
+        dice3Hold.setEnabled(true);
+        diceHold4 = false;
+        dontfour.setEnabled(false);
+        dice4Hold.setEnabled(true);
+        diceHold5 = false;
+        dontfive.setEnabled(false);
+        dice5Hold.setEnabled(true);
+        oneButtonPress = true;
     }//GEN-LAST:event_onesButtonActionPerformed
 
     private void threeOfAKindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeOfAKindActionPerformed
@@ -542,6 +573,22 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
 
     private void yahtzeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yahtzeeButtonActionPerformed
         yahtzeeButton.setEnabled(false);
+        diceHold = false;
+        dontone.setEnabled(false);
+        dice1Hold.setEnabled(true);
+        diceHold2 = false;
+        donttwo.setEnabled(false);
+        dice2Hold.setEnabled(true);
+        diceHold3 = false;
+        dontthree.setEnabled(false);
+        dice3Hold.setEnabled(true);
+        diceHold4 = false;
+        dontfour.setEnabled(false);
+        dice4Hold.setEnabled(true);
+        diceHold5 = false;
+        dontfive.setEnabled(false);
+        dice5Hold.setEnabled(true);
+        yahtzeeButtonPress=true;
     }//GEN-LAST:event_yahtzeeButtonActionPerformed
 
     private void dontoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dontoneActionPerformed
@@ -555,6 +602,86 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         donttwo.setEnabled(false);
         dice2Hold.setEnabled(true);
     }//GEN-LAST:event_donttwoActionPerformed
+
+    private void twosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twosButtonActionPerformed
+       twosButton.setEnabled(false);
+        diceHold = false;
+        dontone.setEnabled(false);
+        dice1Hold.setEnabled(true);
+        diceHold2 = false;
+        donttwo.setEnabled(false);
+        dice2Hold.setEnabled(true);
+        diceHold3 = false;
+        dontthree.setEnabled(false);
+        dice3Hold.setEnabled(true);
+        diceHold4 = false;
+        dontfour.setEnabled(false);
+        dice4Hold.setEnabled(true);
+        diceHold5 = false;
+        dontfive.setEnabled(false);
+        dice5Hold.setEnabled(true);
+        twoButtonPress = true;
+    }//GEN-LAST:event_twosButtonActionPerformed
+
+    private void threesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threesButtonActionPerformed
+        threesButton.setEnabled(false);
+        diceHold = false;
+        dontone.setEnabled(false);
+        dice1Hold.setEnabled(true);
+        diceHold2 = false;
+        donttwo.setEnabled(false);
+        dice2Hold.setEnabled(true);
+        diceHold3 = false;
+        dontthree.setEnabled(false);
+        dice3Hold.setEnabled(true);
+        diceHold4 = false;
+        dontfour.setEnabled(false);
+        dice4Hold.setEnabled(true);
+        diceHold5 = false;
+        dontfive.setEnabled(false);
+        dice5Hold.setEnabled(true);
+        threeButtonPress = true;
+    }//GEN-LAST:event_threesButtonActionPerformed
+
+    private void foursButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foursButtonActionPerformed
+foursButton.setEnabled(false);
+        diceHold = false;
+        dontone.setEnabled(false);
+        dice1Hold.setEnabled(true);
+        diceHold2 = false;
+        donttwo.setEnabled(false);
+        dice2Hold.setEnabled(true);
+        diceHold3 = false;
+        dontthree.setEnabled(false);
+        dice3Hold.setEnabled(true);
+        diceHold4 = false;
+        dontfour.setEnabled(false);
+        dice4Hold.setEnabled(true);
+        diceHold5 = false;
+        dontfive.setEnabled(false);
+        dice5Hold.setEnabled(true);
+        fourButtonPress = true;        
+    }//GEN-LAST:event_foursButtonActionPerformed
+
+    private void fivesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fivesButtonActionPerformed
+        fivesButton.setEnabled(false);
+        diceHold = false;
+        dontone.setEnabled(false);
+        dice1Hold.setEnabled(true);
+        diceHold2 = false;
+        donttwo.setEnabled(false);
+        dice2Hold.setEnabled(true);
+        diceHold3 = false;
+        dontthree.setEnabled(false);
+        dice3Hold.setEnabled(true);
+        diceHold4 = false;
+        dontfour.setEnabled(false);
+        dice4Hold.setEnabled(true);
+        diceHold5 = false;
+        dontfive.setEnabled(false);
+        dice5Hold.setEnabled(true);
+        fiveButtonPress = true;
+    }//GEN-LAST:event_fivesButtonActionPerformed
 
     /**
      * @param args the command line arguments
