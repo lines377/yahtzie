@@ -19,7 +19,7 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
 
     }
     int diceNum, diceNum2, diceNum3, diceNum4, diceNum5;
-    boolean diceHold = false, diceHold2 = false, diceHold3 = false, diceHold4 = false, diceHold5 = false,oneButtonPress=false,twoButtonPress=false,threeButtonPress=false,fourButtonPress=false,fiveButtonPress=false, yahtzeeButtonPress = false;
+    boolean diceHold = false, diceHold2 = false, diceHold3 = false, diceHold4 = false, diceHold5 = false,oneButtonPress=false,twoButtonPress=false,threeButtonPress=false,fourButtonPress=false,fiveButtonPress=false,sixButtonPress=false, yahtzeeButtonPress = false;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -167,6 +167,11 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
         });
 
         sixesButton.setText("Sixes");
+        sixesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sixesButtonActionPerformed(evt);
+            }
+        });
 
         threeOfAKind.setText("3 of a kind");
         threeOfAKind.addActionListener(new java.awt.event.ActionListener() {
@@ -433,10 +438,15 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_dice4HoldActionPerformed
 
     private void RollButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RollButtonActionPerformed
-        String holdDice = null, holdDice2 = null, holdDice3 = null, holdDice4 = null, holdDice5 = null;
+        String holdDice,holdDice2,holdDice3,holdDice4,holdDice5;
+       int [] points=new int[5];
+       int displayOne=0,displayTwo=0,displayThree=0,displayFour=0,displayFive=0,displaySix=0;
        
-
-        if (diceHold == false) {
+       
+      
+       
+        
+       if (diceHold == false) {
             diceNum = (int) Math.round(Math.random() * 5 + 1);
             holdDice = Integer.toString(diceNum);
             dice1.setText(holdDice);
@@ -466,56 +476,112 @@ public class yahtzeeJFrame extends javax.swing.JFrame {
             dice5.setText(holdDice5);
 
         }
+        
+       points[0]=diceNum;
+       points[1]=diceNum2;
+       points[2]=diceNum3;
+       points[3]=diceNum4;
+       points[4]=diceNum5;
+       
         //ones
+        if(!oneButtonPress){
         if (diceNum == 1 || diceNum2 == 1 || diceNum3 == 1 || diceNum4 == 1 || diceNum5 == 1) {
-            onesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
-
-            
-
+         for(int i=0;i<5;i++){
+ 
+            if(points[i]==1){
+                displayOne++;
+            }
+                
+        }
+         onesLable.setText(Integer.toString(displayOne));
+       
         } else {
             onesLable.setText(" ");
         }
+        }
         //twos
+        if(!twoButtonPress){
         if (diceNum == 2 || diceNum2 == 2 || diceNum3 == 2 || diceNum4 == 2 || diceNum5 == 2) {
-            twossButton.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
-
+            
+            for(int i=0;i<5;i++){
+ 
+            if(points[i]==2){
+                displayTwo=displayTwo+2;
+            }
+            }
+            twossButton.setText(Integer.toString(displayTwo));
         } else {
             twossButton.setText(" ");
         }
+        }
         //threes
+        if(!threeButtonPress){
         if (diceNum == 3 || diceNum2 == 3 || diceNum3 == 3 || diceNum4 == 3 || diceNum5 == 3) {
-            threesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
-
+            for(int i=0;i<5;i++){
+ 
+            if(points[i]==3){
+                displayThree=displayThree+3;
+            }
+            threesLable.setText(Integer.toString(displayThree));
+            for(int j=0;j<=3;j++){
+                if(points[i]==3)
+                displayThree=displayThree+3;
+            }
+        }
+            TOAKLable.setText(Integer.toString(displayThree));
+            
         } else {
 
             threesLable.setText(" ");
         }
+        }
         //fours
+         if(!fourButtonPress){
         if (diceNum == 4 || diceNum2 == 4 || diceNum3 == 4 || diceNum4 == 4 || diceNum5 == 4) {
-            foursLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
-
+            for(int i=0;i<5;i++){
+ 
+            if(points[i]==4){
+                displayFour=displayFour+4;
+            }
+            }
+            foursLable.setText(Integer.toString(displayFour));
         } else {
 
             foursLable.setText(" ");
         }
+        }
         //fives
+         if(!fiveButtonPress){
         if (diceNum == 5 || diceNum2 == 5 || diceNum3 == 5 || diceNum4 == 5 || diceNum5 == 5) {
-            fivesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
-
+             for(int i=0;i<5;i++){
+ 
+            if(points[i]==5){
+                displayFive=displayFive+5;
+            }
+            }
+            fivesLable.setText(Integer.toString(displayFive));
         } else {
 
             fivesLable.setText(" ");
         }
+        }
         //sixes
+         if(!sixButtonPress){
         if (diceNum == 6 || diceNum2 == 6 || diceNum3 == 6 || diceNum4 == 6 || diceNum5 == 6) {
-            sixesLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
-
+             for(int i=0;i<5;i++){
+ 
+            if(points[i]==6){
+                displaySix=displaySix+6;
+            }
+            }
+            sixesLable.setText(Integer.toString(displaySix));
         } else {
 
             sixesLable.setText(" ");
         }
+        }
         //yahtzee
-        if(yahtzeeButtonPress==false){
+        if(!yahtzeeButtonPress){
             if (diceNum == diceNum2 && diceNum2 == diceNum3 && diceNum3 == diceNum4 && diceNum4 == diceNum5) {
                 yahtzeeLable.setText(Integer.toString(diceNum + diceNum2 + diceNum3 + diceNum4 + diceNum5));
                 yahtzeeButton.setEnabled(true);
@@ -682,6 +748,26 @@ foursButton.setEnabled(false);
         dice5Hold.setEnabled(true);
         fiveButtonPress = true;
     }//GEN-LAST:event_fivesButtonActionPerformed
+
+    private void sixesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixesButtonActionPerformed
+       sixesButton.setEnabled(false);
+        diceHold = false;
+        dontone.setEnabled(false);
+        dice1Hold.setEnabled(true);
+        diceHold2 = false;
+        donttwo.setEnabled(false);
+        dice2Hold.setEnabled(true);
+        diceHold3 = false;
+        dontthree.setEnabled(false);
+        dice3Hold.setEnabled(true);
+        diceHold4 = false;
+        dontfour.setEnabled(false);
+        dice4Hold.setEnabled(true);
+        diceHold5 = false;
+        dontfive.setEnabled(false);
+        dice5Hold.setEnabled(true);
+        sixButtonPress = true;
+    }//GEN-LAST:event_sixesButtonActionPerformed
 
     /**
      * @param args the command line arguments
